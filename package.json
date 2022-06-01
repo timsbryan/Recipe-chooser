@@ -1,0 +1,23 @@
+{
+  "name": "recipe-chooser",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "node sass.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timsbryan/Recipe-chooser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timsbryan/Recipe-chooser/issues"
+  },
+  "homepage": "https://github.com/timsbryan/Recipe-chooser#readme",
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}
