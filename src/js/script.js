@@ -2,6 +2,10 @@ const ID = '1WWiB5T7p9U-0_CSBghXRCDdpap5Rk-T6C2ZMv9W2tDM';
 const GID = '0';
 const URL = 'https://docs.google.com/spreadsheets/d/' + ID + '/gviz/tq?tqx=out:json&tq&gid=' + GID;
 
+var app = function () {
+
+}
+
 fetch(URL)
   .then(response => response.text())
   .then(data => document.getElementById("json").innerHTML = myItems(data.substring(47).slice(0, -2))

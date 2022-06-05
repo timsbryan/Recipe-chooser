@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/timsbryan/Recipe-chooser#readme",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-webmanifest": "^2.6.0",
     "parcel": "^2.6.0",
     "sass": "^1.52.1"
   }
