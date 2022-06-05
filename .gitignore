@@ -7,3 +7,6 @@ dist
 ._*
 .Spotlight-V100
 .Trashes
+
+## Parcel 
+.parcel-cache/
