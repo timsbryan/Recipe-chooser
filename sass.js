@@ -1,16 +1,15 @@
-let sass = require('sass');
-let fs = require('fs');
+let sass = require("sass");
+let fs = require("fs");
 
 // Configs
 var configs = {
-  name: 'BuildToolsCookbook',
-  files: ['main.scss'],
-  pathIn: 'src/scss',
-  pathOut: 'dist/css',
+  name: "BuildToolsCookbook",
+  files: ["main.scss"],
+  pathIn: "src/scss",
+  pathOut: "dist/css",
   minify: true,
-  sourceMap: true
+  sourceMap: true,
 };
-
 
 var getOptions = function (file, filename, minify) {
   return {
@@ -20,10 +19,9 @@ var getOptions = function (file, filename, minify) {
     sourceMapContents: configs.sourceMap,
     indentType: configs.indentType,
     indentWidth: configs.indentWidth,
-    outputStyle: minify ? 'compressed' : 'expanded'
+    outputStyle: minify ? "compressed" : "expanded",
   };
 };
-
 
 var writeFile = function (pathOut, fileName, fileData) {
   // Create the directory path
@@ -36,21 +34,19 @@ var writeFile = function (pathOut, fileName, fileData) {
       if (err) throw err;
 
       var data = fs.readFileSync(`${pathOut}/${fileName}`);
-      var fd = fs.openSync(`${pathOut}/${fileName}`, 'w+');
+      var fd = fs.openSync(`${pathOut}/${fileName}`, "w+");
       fs.writeSync(fd, data, 0, data.length, 0);
       fs.close(fd, function (err) {
         if (err) throw err;
         console.log(`Compiled ${pathOut}/${fileName}`);
-      })
-    })
-  })
-}
-
+      });
+    });
+  });
+};
 
 var parseSass = function (file, minify) {
-  var filename = `${file.slice(0, file.length - 5)}${minify ? '.min' : ''}.css`;
+  var filename = `${file.slice(0, file.length - 5)}${minify ? ".min" : ""}.css`;
   sass.render(getOptions(file, filename, minify), function (err, result) {
-
     // If there's an error, throw it
     if (err) throw err;
 
@@ -59,11 +55,10 @@ var parseSass = function (file, minify) {
 
     if (configs.sourceMap && !configs.sourceMapEmbed) {
       // Write external sourcemap
-      writeFile(configs.pathOut, filename + '.map', result.map, false);
+      writeFile(configs.pathOut, filename + ".map", result.map, false);
     }
   });
 };
-
 
 configs.files.forEach(function (file) {
   parseSass(file);
