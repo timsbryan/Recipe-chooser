@@ -1,8 +1,24 @@
-table {
-  border-collapse: collapse;
+main {
+  margin: 0 auto;
+  max-width: 960px;
 }
 
-th,
-td {
-  border: 1px solid black;
+.recipes {
+  &__recipe {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+
+    &__name {
+      background-color: steelblue;
+    }
+
+    &__ingredients {
+      background-color: steelblue;
+    }
+
+    &__change {
+      background-color: steelblue;
+    }
+  }
 }
