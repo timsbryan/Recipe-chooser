@@ -6,11 +6,15 @@ const URL =
   "/gviz/tq?tqx=out:json&tq=&gid=0" +
   GID;
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+};
+
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 window.data = "";
 
-let app = function () {};
+let app = function () { };
 
 let myItems = function (jsonString) {
   let json = JSON.parse(jsonString);
