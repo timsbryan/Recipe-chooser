@@ -4,7 +4,7 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel watch",
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,11 +19,18 @@
   },
   "homepage": "https://github.com/timsbryan/Recipe-chooser#readme",
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.6.0",
-    "@parcel/transformer-sass": "^2.6.0",
-    "@parcel/transformer-webmanifest": "^2.6.0",
-    "parcel": "^2.6.0",
+    "@parcel/packager-raw-url": "^2.6.2",
+    "@parcel/service-worker": "^2.6.2",
+    "@parcel/transformer-sass": "^2.6.2",
+    "@parcel/transformer-webmanifest": "^2.6.2",
+    "parcel": "^2.6.2",
     "prettier": "2.6.2",
     "sass": "^1.52.1"
-  }
+  },
+  "browserslist": [
+    "last 2 Firefox versions",
+    "last 2 Chrome versions",
+    "not ie > 0",
+    "not ie_mob > 0"
+  ]
 }
